@@ -2,8 +2,8 @@ import datetime
 
 # Video Path
 VIDEO_CONFIG = {
-	"VIDEO_CAP" : "video/7.mp4",
-	"IS_CAM" : False,
+	"VIDEO_CAP" : 0,
+	"IS_CAM" : True,
 	"CAM_APPROX_FPS": 3,
 	"HIGH_CAM": False,
 	"START_TIME": datetime.datetime(2020, 11, 5, 0, 0, 0, 0)
