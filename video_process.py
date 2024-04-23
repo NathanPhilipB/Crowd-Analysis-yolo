@@ -226,12 +226,19 @@ def video_process(cap, frame_size, net, ln, encoder, tracker, movement_data_writ
 			cv2.putText(frame, text, (10, 30),
 				cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 3)
 
+		# Display Crowd Density
+		#if SHOW_DETECT:
+		#	text = "Crowd Density": {}".format()"
+
+
 		# Display current time on screen
-		# current_date = str(current_datetime.strftime("%b-%d-%Y"))
-		# current_time = str(current_datetime.strftime("%I:%M:%S %p"))
-		# cv2.putText(frame, (current_date), (500, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 3)
-		# cv2.putText(frame, (current_time), (500, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 3)
+		current_date = str(current_datetime.strftime("%b-%d-%Y"))
+		current_time = str(current_datetime.strftime("%I:%M:%S %p"))
+		cv2.putText(frame, (current_date), (500, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 3)
+		cv2.putText(frame, (current_time), (500, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 3)
 		
+
+
 		# Record crowd data to file
 		if DATA_RECORD:
 			_record_crowd_data(record_time, len(humans_detected), len(violate_set), RE, ABNORMAL, crowd_data_writer)
